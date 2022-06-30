@@ -35516,8 +35516,11 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Info = function Info() {
-  return /*#__PURE__*/_react.default.createElement("div", null, "Info");
+var Info = function Info(_ref) {
+  var score = _ref.score;
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "info"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Score:", score));
 };
 
 var _default = Info;
@@ -35577,6 +35580,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -35666,12 +35671,17 @@ var Game = function Game(_ref) {
   }, [compChoice]);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "game"
-  }, "player choice : ", choice, " ", /*#__PURE__*/_react.default.createElement("br", null), "computer choice : ", compChoice, " ", /*#__PURE__*/_react.default.createElement("br", null), "results:", Playerwin === "Win" && /*#__PURE__*/_react.default.createElement("h2", null, "You Win\uD83D\uDE0E"), Playerwin === "Draw" && /*#__PURE__*/_react.default.createElement("h2", null, "Draw"), Playerwin === "Lost" && /*#__PURE__*/_react.default.createElement("h2", null, "You Lost\uD83D\uDE2A"));
+  }, "player choice : ", choice, " ", /*#__PURE__*/_react.default.createElement("br", null), "computer choice : ", compChoice, " ", /*#__PURE__*/_react.default.createElement("br", null), "results:", Playerwin === "Draw" && /*#__PURE__*/_react.default.createElement("h2", null, "Draw"), Playerwin === "Win" && /*#__PURE__*/_react.default.createElement("h2", null, "You Win!"), Playerwin === "Lost" && /*#__PURE__*/_react.default.createElement("h2", null, "You Lose"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/",
+    onClick: function onClick() {
+      return setCompChoice();
+    }
+  }, "Play Again"));
 };
 
 var _default = Game;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"components/Modal.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/index.js"}],"components/Modal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35771,9 +35781,9 @@ var App = function App() {
     path: "game",
     element: /*#__PURE__*/_react.default.createElement(_Game.default, {
       score: score,
-      choice: choice
-    }),
-    setScore: setScore
+      choice: choice,
+      setScore: setScore
+    })
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "Modal",
     element: /*#__PURE__*/_react.default.createElement(_Modal.default, null)
@@ -35900,7 +35910,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56679" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58254" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

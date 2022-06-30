@@ -18,7 +18,7 @@ const App = () => {
       <Info score={score}/>
       <Routes>
         <Route path="/" element={<Play setChoice={setChoice}/>} />
-        <Route path="game" element={<Game score={score} choice={choice}/>}  setScore={setScore}/>
+        <Route path="game" element={<Game score={score} choice={choice}  setScore={setScore}/>} />
         <Route path="Modal" element={<Modal />} />
       </Routes>
      

@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Info = () => {
+const Info = ({score}) => {
+
+
   return (
-    <div>Info</div>
+    <div className="info">
+      <h1>Score:{score}</h1>
+    
+    </div>
   )
 }
 
