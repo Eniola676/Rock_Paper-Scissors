@@ -35522,24 +35522,6 @@ var Info = function Info() {
 
 var _default = Info;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"components/Game.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Game = function Game() {
-  return /*#__PURE__*/_react.default.createElement("div", null, "Game");
-};
-
-var _default = Game;
-exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"components/Play.js":[function(require,module,exports) {
 "use strict";
 
@@ -35550,35 +35532,35 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactRouterDom = _interopRequireDefault(require("react-router-dom"));
-
-var _Game = _interopRequireDefault(require("./Game"));
+var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Play = function Play(setChoice) {
-  var select = function select() {
+var Play = function Play(_ref) {
+  var setChoice = _ref.setChoice;
+
+  var select = function select(e) {
     setChoice(e.target.dataset.id);
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "play"
-  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.default, {
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/game"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    "data-id": "paper",
+    "data-id": "Rock",
     className: "icon icon--rock",
     onClick: select
-  }, "Rock")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.default, {
+  }, "Rock")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/game"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    "data-id": "paper",
+    "data-id": "Paper",
     className: "icon icon--paper",
     onClick: select
-  }, "Paper")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.default, {
+  }, "Paper")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/game"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    "data-id": "paper",
+    "data-id": "Scissors",
     className: "icon icon--scissors",
     onClick: select
   }, "Scissors")));
@@ -35586,7 +35568,110 @@ var Play = function Play(setChoice) {
 
 var _default = Play;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/index.js","./Game":"components/Game.js"}],"components/Modal.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/index.js"}],"components/Game.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Game = function Game(_ref) {
+  var score = _ref.score,
+      choice = _ref.choice,
+      setScore = _ref.setScore,
+      setChoice = _ref.setChoice;
+
+  // initialize states..
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      compChoice = _useState2[0],
+      setCompChoice = _useState2[1]; // state for computers choice
+
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      Playerwin = _useState4[0],
+      setPlayerwin = _useState4[1]; // state for player to win 
+  // logic of the computer's choice
+
+
+  var compChoiceProcess = function compChoiceProcess() {
+    var choices = ["Rock", "Paper", "Scissors"];
+    setCompChoice(choices[Math.floor(Math.random() * 3)]); // randomize computers choice
+  }; // selct computer's choice after the game component loads
+
+
+  (0, _react.useEffect)(function () {
+    compChoiceProcess();
+  }, []); // Results
+
+  var results = function results() {
+    if (choice === "Rock" && compChoice === "Scissors") {
+      setPlayerwin("Win");
+      setScore(function (score) {
+        return score + 1;
+      });
+    } else if (choice === "Rock" && compChoice === "Paper") {
+      setPlayerwin("Lost");
+      setScore(function (score) {
+        return score - 1;
+      });
+    } else if (choice === "Paper" && compChoice === "Scissors") {
+      setPlayerwin("Lost");
+      setScore(function (score) {
+        return score + 1;
+      });
+    } else if (choice === "Paper" && compChoice === "Rock") {
+      setPlayerwin("Win");
+      setScore(function (score) {
+        return score - 1;
+      });
+    } else if (choice === "Scissors" && compChoice === "Paper") {
+      setPlayerwin("Win");
+      setScore(function (score) {
+        return score + 1;
+      });
+    } else if (choice === "Scissors" && compChoice === "Rock") {
+      setPlayerwin("Lost");
+      setScore(function (score) {
+        return score - 1;
+      });
+    } else {
+      setPlayerwin("Draw");
+    }
+  }; // Display result after the game component loads
+
+
+  (0, _react.useEffect)(function () {
+    results();
+  }, [compChoice]);
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "game"
+  }, "player choice : ", choice, " ", /*#__PURE__*/_react.default.createElement("br", null), "computer choice : ", compChoice, " ", /*#__PURE__*/_react.default.createElement("br", null), "results:", Playerwin === "Win" && /*#__PURE__*/_react.default.createElement("h2", null, "You Win\uD83D\uDE0E"), Playerwin === "Draw" && /*#__PURE__*/_react.default.createElement("h2", null, "Draw"), Playerwin === "Lost" && /*#__PURE__*/_react.default.createElement("h2", null, "You Lost\uD83D\uDE2A"));
+};
+
+var _default = Game;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"components/Modal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35690,7 +35775,7 @@ var App = function App() {
     }),
     setScore: setScore
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "modal",
+    path: "Modal",
     element: /*#__PURE__*/_react.default.createElement(_Modal.default, null)
   }))), /*#__PURE__*/_react.default.createElement(_Footer.default, null));
 };
@@ -35815,7 +35900,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56294" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56679" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

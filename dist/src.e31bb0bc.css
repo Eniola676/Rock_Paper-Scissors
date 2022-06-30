@@ -9,7 +9,11 @@ body {
   background: radial-gradient(circle, #1f3756, #141539);
   color: white;
   text-align: center;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 2.5rem; }
+
+a {
+  color: white; }
 
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

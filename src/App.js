@@ -19,7 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Play setChoice={setChoice}/>} />
         <Route path="game" element={<Game score={score} choice={choice}/>}  setScore={setScore}/>
-        <Route path="modal" element={<Modal />} />
+        <Route path="Modal" element={<Modal />} />
       </Routes>
      
     </div>
