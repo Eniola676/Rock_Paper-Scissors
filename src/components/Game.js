@@ -29,10 +29,10 @@ const Game = ({score, choice,setScore,setChoice }) => {
       setScore(score=>score-1)
     } else if (choice==="Paper" && compChoice==="Scissors") {
       setPlayerwin("Lost")
-      setScore(score=>score+1)
+      setScore(score=>score-1)
     } else if (choice==="Paper" && compChoice==="Rock") {
       setPlayerwin("Win")
-      setScore(score=>score-1)
+      setScore(score=>score+1)
     } else if (choice==="Scissors" && compChoice==="Paper") {
       setPlayerwin("Win")
       setScore(score=>score+1)

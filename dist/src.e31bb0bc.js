@@ -35520,7 +35520,13 @@ var Info = function Info(_ref) {
   var score = _ref.score;
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "info"
-  }, /*#__PURE__*/_react.default.createElement("h1", null, "Score:", score));
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "title"
+  }, /*#__PURE__*/_react.default.createElement("span", null, "Rock"), /*#__PURE__*/_react.default.createElement("span", null, "Paper"), /*#__PURE__*/_react.default.createElement("span", null, "Scissors")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "Scorebox"
+  }, /*#__PURE__*/_react.default.createElement("span", null, "Score"), /*#__PURE__*/_react.default.createElement("div", {
+    className: "Scorebox__score"
+  }, score)));
 };
 
 var _default = Info;
@@ -35643,12 +35649,12 @@ var Game = function Game(_ref) {
     } else if (choice === "Paper" && compChoice === "Scissors") {
       setPlayerwin("Lost");
       setScore(function (score) {
-        return score + 1;
+        return score - 1;
       });
     } else if (choice === "Paper" && compChoice === "Rock") {
       setPlayerwin("Win");
       setScore(function (score) {
-        return score - 1;
+        return score + 1;
       });
     } else if (choice === "Scissors" && compChoice === "Paper") {
       setPlayerwin("Win");
@@ -35910,7 +35916,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58254" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64127" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
