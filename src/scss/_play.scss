@@ -23,6 +23,7 @@
             border:16px solid;
     
             &--paper{
+                // @include tpain($image-paper,$paper-gradient);
                 background-color: white;
                 background-image: url($image-paper);
                 background-repeat: no-repeat;

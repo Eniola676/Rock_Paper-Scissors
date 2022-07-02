@@ -95,5 +95,42 @@ body {
         .play .items .icon--rock:hover {
           transform: translateX(-10rem) translateY(13rem) scale(1.1); }
 
+.game {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 50px;
+  align-items: 50px; }
+  .game__player {
+    display: flex;
+    flex-direction: column; }
+    .game__player .text {
+      text-transform: uppercase; }
+    .game__player .icon {
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      border-color: 20px solid; }
+      .game__player .icon--player {
+        background-color: white;
+        background-image: url("/icon-paper.d84ea197.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        border-color: #4865f4;
+        box-shadow: inset 0px 5px 6px grey, 0px 8px #0d31e3; }
+      .game__player .icon--scissors {
+        background-color: white;
+        background-image: url("/icon-scissors.9cac0503.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        border-color: #ec9e0e;
+        box-shadow: inset 0px 5px 6px grey, 0px 8px #a46e0a; }
+      .game__player .icon--rock {
+        background-color: white;
+        background-image: url("/icon-rock.df4dba2c.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: inset 0px 5px 5px grey, 0px 8px #a11b34;
+        border-color: #dc2e4e; }
+
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

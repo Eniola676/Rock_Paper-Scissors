@@ -1,0 +1,58 @@
+.game{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top:50px;
+    align-items: 50px;
+    
+    &__player{
+        display: flex;
+        flex-direction: column;
+        .text{
+            text-transform: uppercase;
+        }
+
+
+        .icon{
+            
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+            border-color:20px solid ;
+            // background-color: antiquewhite;
+
+            &--player{
+                background-color: white;
+                background-image: url($image-paper);
+                background-repeat: no-repeat;
+                background-position: center;
+                border-color:$paper-gradient;
+                box-shadow: inset 0px 5px 6px grey, 0px 8px darken($paper-gradient, 15%);
+            }
+            &--scissors{
+                background-color: white;
+                background-image: url($image-scissors);
+                background-repeat: no-repeat;
+                background-position: center;
+                border-color:$scissors-gradient ;
+                box-shadow: inset 0px 5px 6px grey, 0px 8px darken($scissors-gradient, 15%);
+              
+            }
+            &--rock{
+                background-color: white;
+                background-image: url($image-rock);
+                background-repeat: no-repeat; 
+                background-position: center;
+                box-shadow: inset 0px 5px 5px grey, 0px 8px darken($rock-gradient, 15%);
+                border-color:$rock-gradient ;    
+            }
+
+
+        }
+
+      
+        
+
+
+    }
+}     
+

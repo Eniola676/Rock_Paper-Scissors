@@ -10,7 +10,7 @@ const Game = ({score, choice,setScore,setChoice }) => {
 
   // logic of the computer's choice
   const compChoiceProcess =()=>{
-    const choices =["Rock","Paper","Scissors"];
+    const choices =["rock","paper","scissors"];
     setCompChoice(choices[Math.floor(Math.random()*3)]); // randomize computers choice
   }
 
@@ -21,22 +21,22 @@ const Game = ({score, choice,setScore,setChoice }) => {
 
   // Results
   const results=()=>{
-    if (choice==="Rock" && compChoice==="Scissors") {
+    if (choice==="rock" && compChoice==="scissors") {
       setPlayerwin("Win")
       setScore(score=>score+1)
-    } else if (choice==="Rock" && compChoice==="Paper") {
+    } else if (choice==="rock" && compChoice==="paper") {
       setPlayerwin("Lost")
       setScore(score=>score-1)
-    } else if (choice==="Paper" && compChoice==="Scissors") {
+    } else if (choice==="paper" && compChoice==="scissors") {
       setPlayerwin("Lost")
       setScore(score=>score-1)
-    } else if (choice==="Paper" && compChoice==="Rock") {
+    } else if (choice==="paper" && compChoice==="rock") {
       setPlayerwin("Win")
       setScore(score=>score+1)
-    } else if (choice==="Scissors" && compChoice==="Paper") {
+    } else if (choice==="scissors" && compChoice==="paper") {
       setPlayerwin("Win")
       setScore(score=>score+1)
-    } else if (choice==="Scissors" && compChoice==="Rock") {
+    } else if (choice==="scissors" && compChoice==="rock") {
       setPlayerwin("Lost")
       setScore(score=>score-1)
     } else {
@@ -44,24 +44,44 @@ const Game = ({score, choice,setScore,setChoice }) => {
   
     }    
   }
-  // Display result after the game component loads
+  //  result after the game component loads
   useEffect(() => {
     results();
   },[compChoice])
  
     return (
 
+      // {/* Display players choice and computers choice and results  */}
     <div className="game">
-      {/* Display players choice and computers choice and results  */}
-      player choice : {choice} <br/>   
-      computer choice : {compChoice} <br/>  
-      results:
-      {Playerwin==="Draw" && <h2>Draw</h2>}
-      {Playerwin==="Win" && <h2>You Win!</h2>}
-      {Playerwin==="Lost" && <h2>You Lose</h2>}
+
+      <div className="game__player"> {/* for player */}
+        <span className="text">You Picked</span>
+        <div className={`icon icon--${choice}`}>{choice}</div>  {/* OWATI😪 this is it */}
+      </div>
+
       
-      {/*Play agin button  */}
-      <Link to ="/" onClick={()=>setCompChoice()}>Play Again</Link>
+
+      {/* Displays result and plaay again */}
+      {Playerwin==="Draw" &&  <div className="result__play">
+        <span className='text'> Draw</span>
+        <Link to ="/" className='play-again' onClick={()=>setCompChoice()}>Play Again</Link>
+      </div>}
+      {Playerwin==="Win" &&  <div className="result__play">
+        <span className='text'> You Win</span>
+        <Link to ="/" className='play-again' onClick={()=>setCompChoice()}>Play Again</Link>
+      </div>}
+      {Playerwin==="Lost" &&  <div className="result__play">
+        <span className='text'> You Lose</span>
+        <Link to ="/" className='play-again' onClick={()=>setCompChoice()}>Play Again</Link>
+      </div>} 
+
+
+      <div className="game__comp"> {/* for computer */}
+        <span className="text">Computer Picked</span>
+        <div className={`icon icon--${compChoice}` }>{compChoice}</div>
+      </div>
+
+
       
     </div>
   )

@@ -35567,19 +35567,19 @@ var Play = function Play(_ref) {
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/game"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    "data-id": "Paper",
+    "data-id": "paper",
     className: "icon icon--paper",
     onClick: select
   })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/game"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    "data-id": "Scissors",
+    "data-id": "scissors",
     className: "icon icon--scissors",
     onClick: select
   })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/game"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    "data-id": "Rock",
+    "data-id": "rock",
     className: "icon icon--rock",
     onClick: select
   }))));
@@ -35636,7 +35636,7 @@ var Game = function Game(_ref) {
 
 
   var compChoiceProcess = function compChoiceProcess() {
-    var choices = ["Rock", "Paper", "Scissors"];
+    var choices = ["rock", "paper", "scissors"];
     setCompChoice(choices[Math.floor(Math.random() * 3)]); // randomize computers choice
   }; // selct computer's choice after the game component loads
 
@@ -35646,32 +35646,32 @@ var Game = function Game(_ref) {
   }, []); // Results
 
   var results = function results() {
-    if (choice === "Rock" && compChoice === "Scissors") {
+    if (choice === "rock" && compChoice === "scissors") {
       setPlayerwin("Win");
       setScore(function (score) {
         return score + 1;
       });
-    } else if (choice === "Rock" && compChoice === "Paper") {
+    } else if (choice === "rock" && compChoice === "paper") {
       setPlayerwin("Lost");
       setScore(function (score) {
         return score - 1;
       });
-    } else if (choice === "Paper" && compChoice === "Scissors") {
+    } else if (choice === "paper" && compChoice === "scissors") {
       setPlayerwin("Lost");
       setScore(function (score) {
         return score - 1;
       });
-    } else if (choice === "Paper" && compChoice === "Rock") {
+    } else if (choice === "paper" && compChoice === "rock") {
       setPlayerwin("Win");
       setScore(function (score) {
         return score + 1;
       });
-    } else if (choice === "Scissors" && compChoice === "Paper") {
+    } else if (choice === "scissors" && compChoice === "paper") {
       setPlayerwin("Win");
       setScore(function (score) {
         return score + 1;
       });
-    } else if (choice === "Scissors" && compChoice === "Rock") {
+    } else if (choice === "scissors" && compChoice === "rock") {
       setPlayerwin("Lost");
       setScore(function (score) {
         return score - 1;
@@ -35679,20 +35679,61 @@ var Game = function Game(_ref) {
     } else {
       setPlayerwin("Draw");
     }
-  }; // Display result after the game component loads
+  }; //  result after the game component loads
 
 
   (0, _react.useEffect)(function () {
     results();
   }, [compChoice]);
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "game"
-  }, "player choice : ", choice, " ", /*#__PURE__*/_react.default.createElement("br", null), "computer choice : ", compChoice, " ", /*#__PURE__*/_react.default.createElement("br", null), "results:", Playerwin === "Draw" && /*#__PURE__*/_react.default.createElement("h2", null, "Draw"), Playerwin === "Win" && /*#__PURE__*/_react.default.createElement("h2", null, "You Win!"), Playerwin === "Lost" && /*#__PURE__*/_react.default.createElement("h2", null, "You Lose"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/",
-    onClick: function onClick() {
-      return setCompChoice();
-    }
-  }, "Play Again"));
+  return (
+    /*#__PURE__*/
+    // {/* Display players choice and computers choice and results  */}
+    _react.default.createElement("div", {
+      className: "game"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "game__player"
+    }, " ", /*#__PURE__*/_react.default.createElement("span", {
+      className: "text"
+    }, "You Picked"), /*#__PURE__*/_react.default.createElement("div", {
+      className: "icon icon--".concat(choice)
+    }, choice), "  "), Playerwin === "Draw" && /*#__PURE__*/_react.default.createElement("div", {
+      className: "result__play"
+    }, /*#__PURE__*/_react.default.createElement("span", {
+      className: "text"
+    }, " Draw"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/",
+      className: "play-again",
+      onClick: function onClick() {
+        return setCompChoice();
+      }
+    }, "Play Again")), Playerwin === "Win" && /*#__PURE__*/_react.default.createElement("div", {
+      className: "result__play"
+    }, /*#__PURE__*/_react.default.createElement("span", {
+      className: "text"
+    }, " You Win"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/",
+      className: "play-again",
+      onClick: function onClick() {
+        return setCompChoice();
+      }
+    }, "Play Again")), Playerwin === "Lost" && /*#__PURE__*/_react.default.createElement("div", {
+      className: "result__play"
+    }, /*#__PURE__*/_react.default.createElement("span", {
+      className: "text"
+    }, " You Lose"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/",
+      className: "play-again",
+      onClick: function onClick() {
+        return setCompChoice();
+      }
+    }, "Play Again")), /*#__PURE__*/_react.default.createElement("div", {
+      className: "game__comp"
+    }, " ", /*#__PURE__*/_react.default.createElement("span", {
+      className: "text"
+    }, "Computer Picked"), /*#__PURE__*/_react.default.createElement("div", {
+      className: "icon icon--".concat(compChoice)
+    }, compChoice)))
+  );
 };
 
 var _default = Game;
@@ -35926,7 +35967,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50358" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61006" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
