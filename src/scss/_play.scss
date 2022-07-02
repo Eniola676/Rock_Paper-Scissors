@@ -1,0 +1,69 @@
+.play{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    margin-top:50px;
+    // background-color: white;
+
+    .triangle{
+        position: absolute;
+        align-self: center;
+        margin-top: 70px;
+    }
+    
+    .items{
+        display: flex;
+        justify-content: center;
+    
+        .icon{
+            height: 160px;
+            width:160px;
+            border-radius:50% ;
+            border:16px solid;
+    
+            &--paper{
+                background-color: white;
+                background-image: url($image-paper);
+                background-repeat: no-repeat;
+                background-position: center;
+                border-color:$paper-gradient ;
+                box-shadow: inset 0px 5px 6px grey, 0px 8px darken($paper-gradient, 15%);
+                transform: translateX(1.5rem);
+        
+                &:hover{
+                    transform: translateX(1.5rem) scale(1.1);
+                }
+            }
+            &--scissors{
+                background-color: white;
+                background-image: url($image-scissors);
+                background-repeat: no-repeat;
+                background-position: center;
+                border-color:$scissors-gradient ;
+                box-shadow: inset 0px 5px 6px grey, 0px 8px darken($scissors-gradient, 15%);
+                transform: translateX(8.5rem);
+                &:hover{
+                    transform: translateX(8.5rem) scale(1.1);
+                }
+            }
+            &--rock{
+                background-color: white;
+                background-image: url($image-rock);
+                background-repeat: no-repeat; 
+                background-position: center;
+                box-shadow: inset 0px 5px 5px grey, 0px 8px darken($rock-gradient, 15%);
+                border-color:$rock-gradient ;
+                transform: translateX(-10rem) translateY(13rem);
+                
+                &:hover{
+                    transform:  translateX(-10rem) translateY(13rem) scale(1.1);
+                }
+            }
+     
+        }
+    
+    }
+
+}
+

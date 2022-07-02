@@ -35531,7 +35531,9 @@ var Info = function Info(_ref) {
 
 var _default = Info;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"components/Play.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"images/bg-triangle.svg":[function(require,module,exports) {
+module.exports = "/bg-triangle.4d1d2559.svg";
+},{}],"components/Play.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35542,6 +35544,8 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
+
+var _bgTriangle = _interopRequireDefault(require("../images/bg-triangle.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35554,30 +35558,36 @@ var Play = function Play(_ref) {
 
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "play"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _bgTriangle.default,
+    alt: "RPS triangle",
+    className: "triangle"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "items"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/game"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    "data-id": "Rock",
-    className: "icon icon--rock",
-    onClick: select
-  }, "Rock")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/game"
   }, /*#__PURE__*/_react.default.createElement("div", {
     "data-id": "Paper",
     className: "icon icon--paper",
     onClick: select
-  }, "Paper")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/game"
   }, /*#__PURE__*/_react.default.createElement("div", {
     "data-id": "Scissors",
     className: "icon icon--scissors",
     onClick: select
-  }, "Scissors")));
+  })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/game"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    "data-id": "Rock",
+    className: "icon icon--rock",
+    onClick: select
+  }))));
 };
 
 var _default = Play;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/index.js"}],"components/Game.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/index.js","../images/bg-triangle.svg":"images/bg-triangle.svg"}],"components/Game.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35870,7 +35880,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"./images\\icon-paper.svg":[["icon-paper.d84ea197.svg","images/icon-paper.svg"],"images/icon-paper.svg"],"./images\\icon-scissors.svg":[["icon-scissors.9cac0503.svg","images/icon-scissors.svg"],"images/icon-scissors.svg"],"./images\\icon-rock.svg":[["icon-rock.df4dba2c.svg","images/icon-rock.svg"],"images/icon-rock.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -35916,7 +35926,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64127" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50358" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
