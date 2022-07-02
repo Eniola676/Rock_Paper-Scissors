@@ -35554,6 +35554,9 @@ var Play = function Play(_ref) {
 
   var select = function select(e) {
     setChoice(e.target.dataset.id);
+    {
+      /*Update choice*/
+    }
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -35685,6 +35688,11 @@ var Game = function Game(_ref) {
   (0, _react.useEffect)(function () {
     results();
   }, [compChoice]);
+
+  var sel = function sel(e) {
+    console.log(e.target.className);
+  };
+
   return (
     /*#__PURE__*/
     // {/* Display players choice and computers choice and results  */}
@@ -35695,8 +35703,9 @@ var Game = function Game(_ref) {
     }, " ", /*#__PURE__*/_react.default.createElement("span", {
       className: "text"
     }, "You Picked"), /*#__PURE__*/_react.default.createElement("div", {
-      className: "icon icon--".concat(choice)
-    }, choice), "  "), Playerwin === "Draw" && /*#__PURE__*/_react.default.createElement("div", {
+      className: "icon icon--".concat(choice),
+      onClick: sel
+    }, "f")), Playerwin === "Draw" && /*#__PURE__*/_react.default.createElement("div", {
       className: "result__play"
     }, /*#__PURE__*/_react.default.createElement("span", {
       className: "text"
@@ -35967,7 +35976,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61006" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65338" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

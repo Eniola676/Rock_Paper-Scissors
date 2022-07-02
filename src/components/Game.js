@@ -48,6 +48,11 @@ const Game = ({score, choice,setScore,setChoice }) => {
   useEffect(() => {
     results();
   },[compChoice])
+
+  const sel =(e)=>{         
+    console.log(e.target.className);
+    
+  }
  
     return (
 
@@ -56,7 +61,8 @@ const Game = ({score, choice,setScore,setChoice }) => {
 
       <div className="game__player"> {/* for player */}
         <span className="text">You Picked</span>
-        <div className={`icon icon--${choice}`}>{choice}</div>  {/* OWATI😪 this is it */}
+        {/* <div className="icon" >{choice}</div>   */}
+        <div className={`icon icon--${choice}`}  onClick={sel}>f</div>
       </div>
 
       
@@ -78,7 +84,7 @@ const Game = ({score, choice,setScore,setChoice }) => {
 
       <div className="game__comp"> {/* for computer */}
         <span className="text">Computer Picked</span>
-        <div className={`icon icon--${compChoice}` }>{compChoice}</div>
+        <div className={`icon icon--${compChoice}`  }>{compChoice}</div>
       </div>
 
 

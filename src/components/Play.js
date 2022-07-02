@@ -9,7 +9,7 @@ const Play = (
 
   
   const select =(e)=>{         
-    setChoice(e.target.dataset.id);
+    setChoice(e.target.dataset.id); {/*Update choice*/}
   }
 
   return (

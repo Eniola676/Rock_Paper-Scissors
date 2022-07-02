@@ -110,7 +110,7 @@ body {
       width: 250px;
       border-radius: 50%;
       border-color: 20px solid; }
-      .game__player .icon--player {
+      .game__player .icon--paper {
         background-color: white;
         background-image: url("/icon-paper.d84ea197.svg");
         background-repeat: no-repeat;
