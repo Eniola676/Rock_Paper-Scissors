@@ -97,40 +97,113 @@ body {
 
 .game {
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   margin-top: 50px;
   align-items: 50px; }
+  .game .result {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin: 25px; }
+    .game .result .text {
+      text-transform: uppercase;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 10px; }
+    .game .result .play-again {
+      background-color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 10px 30px;
+      border-radius: 5px;
+      font-size: 0.8rem; }
+      .game .result .play-again:hover {
+        color: red; }
   .game__player {
     display: flex;
     flex-direction: column; }
     .game__player .text {
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-size: 19.2px;
+      font-weight: 300;
+      margin-bottom: 40px; }
     .game__player .icon {
       height: 250px;
       width: 250px;
       border-radius: 50%;
-      border-color: 20px solid; }
+      border: 20px solid;
+      background-size: 50%;
+      border-color: transparent; }
       .game__player .icon--paper {
         background-color: white;
         background-image: url("/icon-paper.d84ea197.svg");
         background-repeat: no-repeat;
         background-position: center;
-        border-color: #4865f4;
-        box-shadow: inset 0px 5px 6px grey, 0px 8px #0d31e3; }
+        border-color: #4865f4; }
+        .game__player .icon--paper--winner {
+          transform: scale(1.1);
+          box-shadow: inset 0px 5px 6px grey, 0px 8px #0d31e3, 0px 0px 0px 0px rgba(255, 255, 255, 0.07), 0px 0px 0px 100px rgba(255, 255, 255, 0.05), 0px 0px 0px 150px rgba(255, 255, 255, 0.025); }
       .game__player .icon--scissors {
         background-color: white;
         background-image: url("/icon-scissors.9cac0503.svg");
         background-repeat: no-repeat;
         background-position: center;
-        border-color: #ec9e0e;
-        box-shadow: inset 0px 5px 6px grey, 0px 8px #a46e0a; }
+        border-color: #ec9e0e; }
+        .game__player .icon--scissors--winner {
+          transform: scale(1.1);
+          box-shadow: inset 0px 5px 6px grey, 0px 8px #a46e0a, 0px 0px 0px 0px rgba(255, 255, 255, 0.07), 0px 0px 0px 100px rgba(255, 255, 255, 0.05), 0px 0px 0px 150px rgba(255, 255, 255, 0.025); }
       .game__player .icon--rock {
         background-color: white;
         background-image: url("/icon-rock.df4dba2c.svg");
         background-repeat: no-repeat;
         background-position: center;
-        box-shadow: inset 0px 5px 5px grey, 0px 8px #a11b34;
         border-color: #dc2e4e; }
+        .game__player .icon--rock--winner {
+          transform: scale(1.1);
+          box-shadow: inset 0px 5px 5px grey, 0px 8px #a11b34, 0px 0px 0px 0px rgba(255, 255, 255, 0.07), 0px 0px 0px 100px rgba(255, 255, 255, 0.05), 0px 0px 0px 150px rgba(255, 255, 255, 0.025); }
+  .game__comp {
+    display: flex;
+    flex-direction: column; }
+    .game__comp .text {
+      text-transform: uppercase;
+      font-size: 19.2px;
+      font-weight: 300;
+      margin-bottom: 40px; }
+    .game__comp .icon {
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      border: 20px solid;
+      background-size: 50%;
+      border-color: transparent; }
+      .game__comp .icon--paper {
+        background-color: white;
+        background-image: url("/icon-paper.d84ea197.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        border-color: #4865f4; }
+        .game__comp .icon--paper--winner {
+          transform: scale(1.1);
+          box-shadow: inset 0px 5px 6px grey, 0px 8px #0d31e3, 0px 0px 0px 0px rgba(255, 255, 255, 0.07), 0px 0px 0px 100px rgba(255, 255, 255, 0.05), 0px 0px 0px 150px rgba(255, 255, 255, 0.025); }
+      .game__comp .icon--scissors {
+        background-color: white;
+        background-image: url("/icon-scissors.9cac0503.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        border-color: #ec9e0e; }
+        .game__comp .icon--scissors--winner {
+          transform: scale(1.1);
+          box-shadow: inset 0px 5px 6px grey, 0px 8px #a46e0a, 0px 0px 0px 0px rgba(255, 255, 255, 0.07), 0px 0px 0px 100px rgba(255, 255, 255, 0.05), 0px 0px 0px 150px rgba(255, 255, 255, 0.025); }
+      .game__comp .icon--rock {
+        background-color: white;
+        background-image: url("/icon-rock.df4dba2c.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        border-color: #dc2e4e; }
+        .game__comp .icon--rock--winner {
+          transform: scale(1.1);
+          box-shadow: inset 0px 5px 5px grey, 0px 8px #a11b34, 0px 0px 0px 0px rgba(255, 255, 255, 0.07), 0px 0px 0px 100px rgba(255, 255, 255, 0.05), 0px 0px 0px 150px rgba(255, 255, 255, 0.025); }
 
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

@@ -35635,6 +35635,12 @@ var Game = function Game(_ref) {
       _useState4 = _slicedToArray(_useState3, 2),
       Playerwin = _useState4[0],
       setPlayerwin = _useState4[1]; // state for player to win 
+
+
+  var _useState5 = (0, _react.useState)("3"),
+      _useState6 = _slicedToArray(_useState5, 2),
+      countdown = _useState6[0],
+      setCountdown = _useState6[1]; // state for 3 seconds countdown
   // logic of the computer's choice
 
 
@@ -35682,16 +35688,19 @@ var Game = function Game(_ref) {
     } else {
       setPlayerwin("Draw");
     }
-  }; //  result after the game component loads
+  }; //  result after the game component loads with countdown
 
 
   (0, _react.useEffect)(function () {
-    results();
-  }, [compChoice]);
-
-  var sel = function sel(e) {
-    console.log(e.target.className);
-  };
+    var timer = countdown > 0 ? setInterval(function () {
+      setCountdown(countdown - 1);
+    }, 1000) : results();
+    return function () {
+      clearInterval(timer);
+    };
+  }, [compChoice, countdown]); // const sel =(e)=>{         
+  //   console.log(e.target.className);
+  // }
 
   return (
     /*#__PURE__*/
@@ -35703,10 +35712,9 @@ var Game = function Game(_ref) {
     }, " ", /*#__PURE__*/_react.default.createElement("span", {
       className: "text"
     }, "You Picked"), /*#__PURE__*/_react.default.createElement("div", {
-      className: "icon icon--".concat(choice),
-      onClick: sel
-    }, "f")), Playerwin === "Draw" && /*#__PURE__*/_react.default.createElement("div", {
-      className: "result__play"
+      className: "icon icon--".concat(choice, " ").concat(Playerwin === "Win" ? "icon icon--".concat(choice, "--winner") : '')
+    })), Playerwin === "Draw" && /*#__PURE__*/_react.default.createElement("div", {
+      className: "result"
     }, /*#__PURE__*/_react.default.createElement("span", {
       className: "text"
     }, " Draw"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -35716,7 +35724,7 @@ var Game = function Game(_ref) {
         return setCompChoice();
       }
     }, "Play Again")), Playerwin === "Win" && /*#__PURE__*/_react.default.createElement("div", {
-      className: "result__play"
+      className: "result"
     }, /*#__PURE__*/_react.default.createElement("span", {
       className: "text"
     }, " You Win"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -35726,7 +35734,7 @@ var Game = function Game(_ref) {
         return setCompChoice();
       }
     }, "Play Again")), Playerwin === "Lost" && /*#__PURE__*/_react.default.createElement("div", {
-      className: "result__play"
+      className: "result"
     }, /*#__PURE__*/_react.default.createElement("span", {
       className: "text"
     }, " You Lose"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -35739,9 +35747,11 @@ var Game = function Game(_ref) {
       className: "game__comp"
     }, " ", /*#__PURE__*/_react.default.createElement("span", {
       className: "text"
-    }, "Computer Picked"), /*#__PURE__*/_react.default.createElement("div", {
-      className: "icon icon--".concat(compChoice)
-    }, compChoice)))
+    }, "The House Picked"), countdown == 0 ? /*#__PURE__*/_react.default.createElement("div", {
+      className: "icon icon--".concat(compChoice, " ").concat(Playerwin === "Lost" ? "icon icon--".concat(compChoice, "--winner") : '')
+    }) : /*#__PURE__*/_react.default.createElement("div", {
+      className: "countdown"
+    }, countdown)))
   );
 };
 
@@ -35976,7 +35986,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65338" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54607" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

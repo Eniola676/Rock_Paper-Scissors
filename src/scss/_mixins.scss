@@ -1,4 +1,4 @@
-@mixin tpain ($image,$color) {
+@mixin icon ($image,$color) {
     background-color: white;
     background-image: url($image);
     background-repeat: no-repeat;
@@ -6,4 +6,5 @@
     border-color:$color ;
     box-shadow: inset 0px 5px 6px grey, 0px 8px darken($paper-gradient, 15%);
 }
+
 

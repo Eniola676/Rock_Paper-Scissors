@@ -1,23 +1,56 @@
 .game{
     display: flex;
+    flex-direction:row;
     flex-wrap: nowrap;
     margin-top:50px;
     align-items: 50px;
+
+.result  {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin:25px;
+    .text{
+        text-transform: uppercase;
+        font-size: 48px;
+        font-weight:700 ;
+        margin-bottom: 10px;
+    }
+    .play-again{
+        background-color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 10px 30px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        &:hover{
+            color:red;
+        }
+
+
+    }
+    // margin-top: 50px;
+    
+
+}  
     
     &__player{
         display: flex;
         flex-direction: column;
         .text{
             text-transform: uppercase;
+            font-size:19.2px;
+            font-weight: 300;
+            margin-bottom: 40px;    
         }
-
-
-        .icon{
-            
+        .icon{  
             height: 250px;
             width: 250px;
             border-radius: 50%;
-            border-color:20px solid ;
+            border:20px solid ;
+            background-size: 50%;
+            border-color:transparent;
+
             // background-color: antiquewhite;
 
             &--paper{
@@ -26,7 +59,14 @@
                 background-repeat: no-repeat;
                 background-position: center;
                 border-color:$paper-gradient;
-                box-shadow: inset 0px 5px 6px grey, 0px 8px darken($paper-gradient, 15%);
+                &--winner{
+                    transform: scale(1.1);
+                    box-shadow: inset 0px 5px 6px grey, 0px 8px darken($paper-gradient, 15%),
+                    0px 0px 0px 0px rgba( #ffffff, .07),
+                    0px 0px 0px 100px rgba( #ffffff, .05),
+                    0px 0px 0px 150px rgba( #ffffff, .025)
+                    ;
+                }
             }
             &--scissors{
                 background-color: white;
@@ -34,7 +74,14 @@
                 background-repeat: no-repeat;
                 background-position: center;
                 border-color:$scissors-gradient ;
-                box-shadow: inset 0px 5px 6px grey, 0px 8px darken($scissors-gradient, 15%);
+                &--winner{
+                    transform: scale(1.1);
+                    box-shadow: inset 0px 5px 6px grey, 0px 8px darken($scissors-gradient, 15%),
+                    0px 0px 0px 0px rgba( #ffffff, .07),
+                    0px 0px 0px 100px rgba( #ffffff, .05),
+                    0px 0px 0px 150px rgba( #ffffff, .025)
+                    ;
+                }
               
             }
             &--rock{
@@ -42,15 +89,93 @@
                 background-image: url($image-rock);
                 background-repeat: no-repeat; 
                 background-position: center;
-                box-shadow: inset 0px 5px 5px grey, 0px 8px darken($rock-gradient, 15%);
                 border-color:$rock-gradient ;    
+                
+                &--winner{
+                    transform: scale(1.1);
+                    box-shadow: inset 0px 5px 5px grey, 0px 8px darken($rock-gradient, 15%),
+                    0px 0px 0px 0px rgba( #ffffff, .07),
+                    0px 0px 0px 100px rgba( #ffffff, .05),
+                    0px 0px 0px 150px rgba( #ffffff, .025)
+                    
+                    ;
+                }
             }
 
 
         }
 
-      
-        
+
+    }
+    &__comp{
+        display: flex;
+        flex-direction: column;
+        .text{
+            text-transform: uppercase;
+            font-size:19.2px;
+            font-weight: 300;
+            margin-bottom: 40px;    
+        }
+        .icon{  
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+            border:20px solid ;
+            background-size: 50%;
+            border-color:transparent;
+
+            // background-color: antiquewhite;
+
+            &--paper{
+                background-color: white;
+                background-image: url($image-paper);
+                background-repeat: no-repeat;
+                background-position: center;
+                border-color:$paper-gradient;
+                
+                &--winner{
+                    transform: scale(1.1);
+                    box-shadow: inset 0px 5px 6px grey, 0px 8px darken($paper-gradient, 15%),
+                    0px 0px 0px 0px rgba( #ffffff, .07),
+                    0px 0px 0px 100px rgba( #ffffff, .05),
+                    0px 0px 0px 150px rgba( #ffffff, .025)
+                    ;
+                }
+            }
+            &--scissors{
+                background-color: white;
+                background-image: url($image-scissors);
+                background-repeat: no-repeat;
+                background-position: center;
+                border-color:$scissors-gradient ;
+                &--winner{
+                    transform: scale(1.1);
+                    box-shadow: inset 0px 5px 6px grey, 0px 8px darken($scissors-gradient, 15%),
+                    0px 0px 0px 0px rgba( #ffffff, .07),
+                    0px 0px 0px 100px rgba( #ffffff, .05),
+                    0px 0px 0px 150px rgba( #ffffff, .025)
+                    ;
+                }
+              
+            }
+            &--rock{
+                background-color: white;
+                background-image: url($image-rock);
+                background-repeat: no-repeat; 
+                background-position: center;
+                border-color:$rock-gradient ;   
+                &--winner{
+                    transform: scale(1.1);
+                    box-shadow: inset 0px 5px 5px grey, 0px 8px darken($rock-gradient, 15%),
+                    0px 0px 0px 0px rgba( #ffffff, .07),
+                    0px 0px 0px 100px rgba( #ffffff, .05),
+                    0px 0px 0px 150px rgba( #ffffff, .025)
+                    ;
+                } 
+            }
+
+
+        }
 
 
     }
