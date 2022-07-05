@@ -1,0 +1,33 @@
+.footer{
+    margin-top: 270px;
+    width:100vw;
+    // display: flex;
+    // justify-content: space-between;
+    .attribution{
+        position: absolute;
+        left:50%;
+        transform: translate(-50%);
+        bottom:16px;
+        
+    }
+    button{
+        position: absolute;
+        bottom:16px;
+        padding: 7px 25px;
+        right: 16px;
+        border-radius: .4rem;
+        border:3px solid $header;
+        color: lighten( $header, 20%);
+        background: none;
+        font-weight: 600;
+        letter-spacing: 2px;
+        &:hover{
+            background-color: rgba($color: white, $alpha: .8);
+            color: $dark-text;
+            cursor: pointer;
+        }
+
+
+
+    }
+}

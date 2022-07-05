@@ -5,6 +5,8 @@
     margin-top:50px;
     align-items: 50px;
 
+
+
 .result  {
     align-self: center;
     display: flex;
@@ -37,6 +39,7 @@
     &__player{
         display: flex;
         flex-direction: column;
+        margin-right: 2.5rem;
         .text{
             text-transform: uppercase;
             font-size:19.2px;
@@ -64,7 +67,7 @@
                     box-shadow: inset 0px 5px 6px grey, 0px 8px darken($paper-gradient, 15%),
                     0px 0px 0px 0px rgba( #ffffff, .07),
                     0px 0px 0px 100px rgba( #ffffff, .05),
-                    0px 0px 0px 150px rgba( #ffffff, .025)
+                    0px 0px 0px 200px rgba( #ffffff, .025)
                     ;
                 }
             }
@@ -101,15 +104,14 @@
                     ;
                 }
             }
-
-
+           
         }
-
 
     }
     &__comp{
         display: flex;
         flex-direction: column;
+        margin-right: 2.5rem;
         .text{
             text-transform: uppercase;
             font-size:19.2px;
@@ -180,4 +182,19 @@
 
     }
 }     
+ .countdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: rgba( #000000, .3);
+    font-size: 8rem;
+
+
+
+                
+}
 
